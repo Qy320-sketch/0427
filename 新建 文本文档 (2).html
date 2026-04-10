@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JCC 欢迎页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #f5fafe;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        .title {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        input {
+            padding: 12px 20px;
+            font-size: 18px;
+            width: 240px;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+        input:focus {
+            border-color: #4a90e2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">你好，我们是 JCC</div>
+    <input type="text" id="inputBox" placeholder="输入 1 按回车">
+
+    <script>
+        const input = document.getElementById('inputBox');
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                if (input.value.trim() === '1') {
+                    document.body.innerHTML = `
+                        <div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;background:#fff5f8;">
+                            <h1 style="margin-bottom:20px;color:#ff6b9d">界面 2 🐱</h1>
+                            <img src="jcccat.png" style="border-radius:16px;box-shadow:0 0 20px #aaa;width:400px;height:400px;object-fit:cover;">
+                        </div>
+                    `;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
